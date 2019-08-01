@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/dev/main",
+    "pages/center/main",
+    "pages/counter/main",
+    "pages/web/main",
+    "pages/dev/detail/main",
+    "pages/dev/filterActive/main",
+    "pages/dev/cidipt/main",
+    "pages/dev/binding/main",
+    "pages/dev/bind_phone/main",
+    "pages/dev/detail/set/main",
+    "pages/dev/getFilterCode/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "智慧型即热净水机",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#007AFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/dev/main",
+        "text": "设备",
+        "iconPath": "static/img/720/sj-1.png",
+        "selectedIconPath": "static/img/720/sj-2.png"
+      },
+      {
+        "pagePath": "pages/center/main",
+        "text": "我的",
+        "iconPath": "static/img/720/w-1.png",
+        "selectedIconPath": "static/img/720/w-2.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 1000000,
+    "connectSocket": 100000,
+    "uploadFile": 100000,
+    "downloadFile": 100000
+  }
+}

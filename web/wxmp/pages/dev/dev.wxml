@@ -1,0 +1,30 @@
+<view class="content">
+  <!-- banner图 -->
+  <view class='banner'>
+    <!-- mode='as0pectFit' -->
+    <image class='banner-img' src="{{bannerInfo.imageUrl}}" mode='widthFix' data-url="{{bannerInfo.adUrl}}" bindtap='gotoAd' />
+  </view>
+
+  <!-- 设备列表 -->
+  <scroll-view class='devList' scroll-y="{true}" scroll-x="{true}" style=''>
+    <view class='devItem' wx:for="{{devList}}" wx:key="id" data-filterLifeTime="{{item.filterLifeTime}}" data-devCode="{{item.devCode}}" data-filterCode="{{item.filterCode}}" bindtap='goDevDetail'>
+      <view class='icon'>
+        <image class='avatar' src='../../common/img/{{item.online===0?"off":"on"}}.png'></image>
+      </view>
+      <view class="lifeTime">
+        <view>
+          <text style='font-size: 40px;'>{{item.filterLifeTime}}</text>%</view>
+        <view class='text' wx:if="{{item.filterLifeTime <= 10}}">换芯></view>
+        <view class='text' wx:if="{{item.filterLifeTime > 10}}">查看></view>
+
+      </view>
+      <view style='font-size: 14px;'>{{item.devCode}}</view>
+    </view>
+  </scroll-view>
+
+  <!-- 添加设备 -->
+  <view class='addDev' style='padding: 0 40rpx;'>
+    <button style='background: #3385ff; color: #fff;margin-bottom: 10rpx;' size='default' bindtap='getBindStatus0'>添加设备</button>
+    <text bindtap='getBindStatus1' style='font-size: 14px;line-height: 60rpx;'>CID手动添加</text>
+  </view>
+</view>

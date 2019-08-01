@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "i-cell": "/static/iview/cell/index",
+        "i-modal": "/static/iview/modal/index"
+    }
+}

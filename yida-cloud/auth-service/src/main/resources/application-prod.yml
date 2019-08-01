@@ -1,0 +1,20 @@
+logging:
+ config: classpath:logback-prod.xml
+
+img:
+   #环境地址
+  imgUrl: http://123.57.148.29
+
+
+#EMQ Basic 认证
+appid: 01d6f2d460b8a
+appsecret: Mjg1NjE1MzYzNzI4MjUyMDI2ODg4MzAwOTE0MTI4MzIyNTG
+#服务器地址
+emq_server: http://yidasvr.zsxiaohe.com:18080
+#接口地址
+connect_url: /api/v3/connections/
+route_url: /api/v3/routes/
+
+server:
+  port: 9003
+

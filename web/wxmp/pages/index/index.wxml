@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="content">
+  <view class="userinfo">
+  <!-- 未授权 -->
+    <view wx:if="{{!hasUserInfo && canIUse}}">
+      <view class='avatar_box'>
+        <view class='avatar'></view>
+      </view>
+      <view style='padding: 0 20px;'>
+        <view class='text'>
+          <view style='font-size: 17px;color: #555555;'>申请获取以下权限</view>
+          <view style='font-size: 14px;color: #888888;margin-top: 10px;'>获取您的公开信息(昵称、头像等）</view>
+        </view>
+        <button class='btn' type='primary' open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录 </button>
+      </view>
+    </view>
+    <!-- 已授权 -->
+    <view class='authUserInfo' wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+  <!-- <button bindtap='goToJd'>去京东</button> -->
+</view>

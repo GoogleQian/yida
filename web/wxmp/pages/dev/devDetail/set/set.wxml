@@ -1,0 +1,5 @@
+<!--pages/dev/devDetail/set/set.wxml-->
+<view class='unbindDev'>
+  <button style='background: #3385ff; color: #fff;margin-bottom: 10rpx;' loading="{{loading}}" bindtap="devUnbind"> 解除绑定 </button>
+  <button style='background: #3385ff; color: #fff;margin-bottom: 10rpx;' bindtap="callCamera"> 扫码更换滤芯 </button>
+</view>

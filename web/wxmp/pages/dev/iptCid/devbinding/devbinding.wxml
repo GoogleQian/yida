@@ -1,0 +1,18 @@
+<view class='container'>
+  <view wx:if="{{!bindStatus}}" style="color: #2d8cf0;">
+    <view style=' display: flex; justify-content: center;vertical-align: middle'>
+      <text style='font-size: 60px;align-self: flex-end'>{{Countdown}}</text>
+      <text style='align-self: flex-end;margin-bottom: 10px'>s</text>
+    </view>
+    <view style='text-align: center;'>设备绑定中...</view>
+  </view>
+  <view>
+    <image wx:if="{{bindStatus}}" src="{{'../../../../common/img/720/'+result}}" style='display: block;width:100px;height: 100px;'></image>
+    <text wx:if="{{bindStatus}}">{{bindText}}</text>
+  </view>
+  <text class='btn' wx:if="{{bindStatus && bindText==='设备绑定成功'}}" bindtap='goDevList'>完成</text>
+  <view class='error' wx:if="{{bindStatus && bindText==='设备绑定失败'}}">
+    <text class='btn' bindtap='bindDev'>重试</text>
+    <text bindtap='goDevList'>回到首页</text>
+  </view>
+</view>

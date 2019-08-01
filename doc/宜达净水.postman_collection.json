@@ -1,0 +1,899 @@
+{
+	"id": "b74f5a33-7d06-423d-be9d-cde16b144fa0",
+	"name": "宜达净水",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"bc146554-b240-44e2-8fd7-8e083bd14f70"
+	],
+	"folders_order": [
+		"9c990865-5d78-474a-ad5b-c193f7a3c649",
+		"9d50e352-411b-4ac7-a584-0b5e14b25f97",
+		"39b00598-64a2-42f9-aae1-4ebc52fbfc72",
+		"ed816896-848f-4375-a4f8-96db0c8ee9c9",
+		"8ddfb57c-ff83-4095-afcf-9ef82e4e84df",
+		"5d5239ca-d505-48ff-9dbb-c326f7ed65c1"
+	],
+	"folders": [
+		{
+			"id": "ed816896-848f-4375-a4f8-96db0c8ee9c9",
+			"name": "Banner管理",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "b74f5a33-7d06-423d-be9d-cde16b144fa0",
+			"folder": null,
+			"order": [
+				"4a2812db-cab1-47a6-84bd-d8c8d1aa4549",
+				"83ea0579-2d2f-4dbd-8b14-e3a143042653",
+				"1ca7b0a8-8c24-4beb-8c68-35894da8e1bb",
+				"2f9ece83-fd76-42e4-8c70-3bc990ee3d57",
+				"5501cefb-b340-4e56-9860-6aa4f0423cc3",
+				"9dcba81e-931a-49a5-8eb4-bf6635a7ef48"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "9d50e352-411b-4ac7-a584-0b5e14b25f97",
+			"name": "小程序",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "b74f5a33-7d06-423d-be9d-cde16b144fa0",
+			"folder": null,
+			"order": [
+				"ee8a75b9-1767-4f47-8b66-b1e5d6c29afc",
+				"8f11fc45-c53b-4f59-96f7-2e59bf4ec47d",
+				"bea98d39-902d-4d37-8cff-7bac14ccd96d"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "8ddfb57c-ff83-4095-afcf-9ef82e4e84df",
+			"name": "广告相关",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "b74f5a33-7d06-423d-be9d-cde16b144fa0",
+			"folder": null,
+			"order": [
+				"6a3bffbb-4585-436f-925c-96f5035882a7",
+				"ac354b6f-7b10-4beb-8c6b-cf6c4fd975cc",
+				"9ad699ff-8e6d-4ae1-bcba-f5e8766e45e0",
+				"fc9495f9-8766-4513-b5b4-cb7d4825bc52",
+				"2256f1f9-0c0e-4801-8aba-2910951cfe75",
+				"943ba680-fa6f-45ff-8769-fcd2046766d3"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "5d5239ca-d505-48ff-9dbb-c326f7ed65c1",
+			"name": "滤芯相关",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "b74f5a33-7d06-423d-be9d-cde16b144fa0",
+			"folder": null,
+			"order": [
+				"5e3ecb3f-3b19-4de1-8ed4-f620fada25fd",
+				"ad8460fd-eee4-4370-9f0c-d23a9f42c60e",
+				"2052d2c9-a79b-4671-af73-1843e82523af",
+				"809ede70-c667-4386-a54f-efba920bfad3",
+				"97b60d2e-24a8-4efa-b6b5-27ddff6ddc98",
+				"8e810bd7-6b35-4800-8ab2-c2b7e157eb15"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "39b00598-64a2-42f9-aae1-4ebc52fbfc72",
+			"name": "用户管理",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "b74f5a33-7d06-423d-be9d-cde16b144fa0",
+			"folder": null,
+			"order": [
+				"b4ea8d72-0b92-4332-ad25-7de8ccc9b9a0",
+				"994cb5d7-f1ef-4609-9981-7815ed73da4e",
+				"41102a40-88ed-4b00-9eaa-d538a9027006",
+				"a89024cc-818d-4319-bfdb-92bbe321f90b",
+				"6bc0f0de-ad2a-406e-8217-9953793f0a3e"
+			],
+			"folders_order": []
+		},
+		{
+			"id": "9c990865-5d78-474a-ad5b-c193f7a3c649",
+			"name": "设备管理",
+			"description": "",
+			"auth": null,
+			"events": null,
+			"collection": "b74f5a33-7d06-423d-be9d-cde16b144fa0",
+			"folder": null,
+			"order": [
+				"b8c79863-03c8-4d6a-b45e-ce76ee00bcda",
+				"c63cc863-840a-4787-b9f8-b8b2dacd77a8",
+				"8080566e-c246-4449-b236-ee792ee579bd",
+				"b5722453-ce84-4fab-b74d-25b5034c3498",
+				"c6ae0db7-7a20-4370-8510-78d8f0b2a42b",
+				"fdd4568f-d8d3-48ff-a232-2ef82b4066af"
+			],
+			"folders_order": []
+		}
+	],
+	"requests": [
+		{
+			"id": "1ca7b0a8-8c24-4beb-8c68-35894da8e1bb",
+			"name": "修改banner",
+			"url": "https://{{ip}}:441/yida/banner/banners/4",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "ed816896-848f-4375-a4f8-96db0c8ee9c9",
+			"rawModeData": "{\n\t \"id\": 4,\n    \"name\": \"测试广告\",\n    \"imageUrl\": \"https://www.baidu.com/s?wd=%E4%BB%8A%E6%97%A5%E6%96%B0%E9%B2%9C%E4%BA%8B&tn=SE_Pclogo_6ysd4c7a&sa=ire_dl_gh_logo&rsv_dl=igh_logo_pc\",\n    \"adUrl\": \"http://gd.10086.cn/pmarketing/preferential/mrk/mrkinfo/tdk.jsps?marketsid=9627\",\n    \"state\": 1,\n    \"createTime\": \"2018-10-21 16:02:40\",\n    \"updateTime\": \"2018-10-21 16:02:40\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "2052d2c9-a79b-4671-af73-1843e82523af",
+			"name": "修改广告",
+			"url": "https://{{ip}}:441/yida/fliter/fliter/1",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "5d5239ca-d505-48ff-9dbb-c326f7ed65c1",
+			"rawModeData": "{\n    \"id\": 1,\n    \"name\": \"测试广告\",\n    \"solgan\": \"哈哈\",\n    \"state\": 0,\n    \"createTime\": \"2018-10-16 15:59:54\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "2256f1f9-0c0e-4801-8aba-2910951cfe75",
+			"name": "批量删除",
+			"url": "https://{{ip}}:441/yida/ad/batch",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "8ddfb57c-ff83-4095-afcf-9ef82e4e84df",
+			"rawModeData": "{\n\t\"idList\":[\n\t\t5,6\n\t\t]\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "2f9ece83-fd76-42e4-8c70-3bc990ee3d57",
+			"name": "删除",
+			"url": "https://{{ip}}:441/yida/banner/banners/1",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "ed816896-848f-4375-a4f8-96db0c8ee9c9",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "41102a40-88ed-4b00-9eaa-d538a9027006",
+			"name": "批量删除",
+			"url": "http://{{ip}}:{{9292}}/yida/user/batch",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "39b00598-64a2-42f9-aae1-4ebc52fbfc72",
+			"rawModeData": "{\n\t\"idList\":[\n\t\t10,11\n\t\t]\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "4a2812db-cab1-47a6-84bd-d8c8d1aa4549",
+			"name": "获取banner列表",
+			"url": "https://{{ip}}:441/yida/banner/pages?page=1&pageSize=10&name",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "pageSize",
+					"value": "10",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "",
+					"equals": false,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": "ed816896-848f-4375-a4f8-96db0c8ee9c9",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "5501cefb-b340-4e56-9860-6aa4f0423cc3",
+			"name": "批量删除",
+			"url": "https://{{ip}}:441/yida/banner/batch",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "ed816896-848f-4375-a4f8-96db0c8ee9c9",
+			"rawModeData": "{\n\t\"idList\":[\n\t\t9\n\t\t]\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "5e3ecb3f-3b19-4de1-8ed4-f620fada25fd",
+			"name": "获取广告列表",
+			"url": "https://{{ip}}:441/yida/ad/pages?page=1&pageSize=10&name=2",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "pageSize",
+					"value": "10",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": "5d5239ca-d505-48ff-9dbb-c326f7ed65c1",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "6a3bffbb-4585-436f-925c-96f5035882a7",
+			"name": "获取广告列表",
+			"url": "https://{{ip}}:441/yida/ad/pages?page=1&pageSize=10&name=2",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "pageSize",
+					"value": "10",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "name",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": "8ddfb57c-ff83-4095-afcf-9ef82e4e84df",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "6bc0f0de-ad2a-406e-8217-9953793f0a3e",
+			"name": "获取设备绑定状态",
+			"url": "http://{{ip}}:{{9292}}/yida/dev/status/22",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "39b00598-64a2-42f9-aae1-4ebc52fbfc72",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "8080566e-c246-4449-b236-ee792ee579bd",
+			"name": "更新设备",
+			"url": "http://{{ip}}:{{9292}}/yida/dev/devices/4",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "9c990865-5d78-474a-ad5b-c193f7a3c649",
+			"rawModeData": "{\n    \"id\": 5,\n    \"devCode\": \"200010000000005\",\n    \"userId\": 6,\n    \"bindTime\": \"2018-10-10 15:49:02\",\n    \"status\": 1,\n    \"filterLifeTime\": 100,\n    \"online\": 1,\n    \"enableMultipleBind\": 0,\n    \"inventoryTime\": \"2018-10-10 15:45:19\",\n    \"bindAccount\": \"不拣寒枝₅₂₀\"\n }",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "809ede70-c667-4386-a54f-efba920bfad3",
+			"name": "删除",
+			"url": "https://{{ip}}:441/yida/fliter/fliters/1",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "5d5239ca-d505-48ff-9dbb-c326f7ed65c1",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "83ea0579-2d2f-4dbd-8b14-e3a143042653",
+			"name": "新增Banner",
+			"url": "https://{{ip}}:441/yida/banner/banners",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "ed816896-848f-4375-a4f8-96db0c8ee9c9",
+			"rawModeData": "{\n\t\"name\":\"测试广告2\",\n\t\"imageUrl\":\"https://www.baidu.com/s?wd=%E4%BB%8A%E6%97%A5%E6%96%B0%E9%B2%9C%E4%BA%8B&tn=SE_Pclogo_6ysd4c7a&sa=ire_dl_gh_logo&rsv_dl=igh_logo_pc\",\n\t\"adUrl\":\"http://gd.10086.cn/pmarketing/preferential/mrk/mrkinfo/tdk.jsps?marketsid=9627\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "8e810bd7-6b35-4800-8ab2-c2b7e157eb15",
+			"name": "上架下架接口",
+			"url": "https://{{ip}}:441/yida/ad/ads/1/state/1",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "5d5239ca-d505-48ff-9dbb-c326f7ed65c1",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "8f11fc45-c53b-4f59-96f7-2e59bf4ec47d",
+			"name": "绑定设备",
+			"url": "http://{{ip}}:{{9292}}/yida/dev/bind/200010120124104/1",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "9d50e352-411b-4ac7-a584-0b5e14b25f97",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "943ba680-fa6f-45ff-8769-fcd2046766d3",
+			"name": "上架下架接口",
+			"url": "https://{{ip}}:441/yida/ad/ads/1/state/1",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "8ddfb57c-ff83-4095-afcf-9ef82e4e84df",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "97b60d2e-24a8-4efa-b6b5-27ddff6ddc98",
+			"name": "批量删除",
+			"url": "https://{{ip}}:441/yida/fliter/batch",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "5d5239ca-d505-48ff-9dbb-c326f7ed65c1",
+			"rawModeData": "{\n\t\"idList\":[\n\t\t5,6\n\t\t]\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "994cb5d7-f1ef-4609-9981-7815ed73da4e",
+			"name": "删除用户",
+			"url": "http://{{ip}}:{{9292}}/yida/user/users/9",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "39b00598-64a2-42f9-aae1-4ebc52fbfc72",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "9ad699ff-8e6d-4ae1-bcba-f5e8766e45e0",
+			"name": "修改广告",
+			"url": "https://{{ip}}:441/yida/ad/ads/1",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "8ddfb57c-ff83-4095-afcf-9ef82e4e84df",
+			"rawModeData": "{\n    \"id\": 1,\n    \"name\": \"测试广告\",\n    \"solgan\": \"哈哈\",\n    \"state\": 0,\n    \"createTime\": \"2018-10-16 15:59:54\"\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "9dcba81e-931a-49a5-8eb4-bf6635a7ef48",
+			"name": "上架下架接口",
+			"url": "https://{{ip}}:441/yida/banner/banners/1/state/1",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "ed816896-848f-4375-a4f8-96db0c8ee9c9",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "a89024cc-818d-4319-bfdb-92bbe321f90b",
+			"name": "获取设备绑定状态",
+			"url": "http://{{ip}}:{{9292}}/yida/dev/status/11",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "39b00598-64a2-42f9-aae1-4ebc52fbfc72",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "ac354b6f-7b10-4beb-8c6b-cf6c4fd975cc",
+			"name": "新增广告",
+			"url": "https://{{ip}}:441/yida/ad/ads",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "8ddfb57c-ff83-4095-afcf-9ef82e4e84df",
+			"rawModeData": "{\n\t\"name\":\"测试广告2\",\n\t\"solgan\":\"测试广告标语2\",\n\t\"state\":0\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "ad8460fd-eee4-4370-9f0c-d23a9f42c60e",
+			"name": "新增广告",
+			"url": "https://{{ip}}:441/yida/fliter/fliters",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "5d5239ca-d505-48ff-9dbb-c326f7ed65c1",
+			"rawModeData": "{\n\t\"name\":\"测试广告2\",\n\t\"solgan\":\"测试广告标语2\",\n\t\"state\":0\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "b4ea8d72-0b92-4332-ad25-7de8ccc9b9a0",
+			"name": "获取用户列表",
+			"url": "https://{{ip}}:441/yida/user/list?page=1&pageSize=10&nickName=",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "pageSize",
+					"value": "10",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "nickName",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": "39b00598-64a2-42f9-aae1-4ebc52fbfc72",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "b5722453-ce84-4fab-b74d-25b5034c3498",
+			"name": "开启重复绑定",
+			"url": "http://{{ip}}:{{9292}}/yida/dev/repeat/4?repeatBind=0",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "PUT",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "repeatBind",
+					"value": "0",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": "9c990865-5d78-474a-ad5b-c193f7a3c649",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "b8c79863-03c8-4d6a-b45e-ce76ee00bcda",
+			"name": "获取所有设备列表",
+			"url": "https://{{ip}}:441/yida/dev/list?page=1&pageSize=10&devCode=&userId=",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "pageSize",
+					"value": "10",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "devCode",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "userId",
+					"value": "",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": "9c990865-5d78-474a-ad5b-c193f7a3c649",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "bc146554-b240-44e2-8fd7-8e083bd14f70",
+			"name": "图片上传",
+			"url": "https://{{ip}}:443/yida/file/image",
+			"description": "",
+			"data": [
+				{
+					"key": "file",
+					"value": "",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "bea98d39-902d-4d37-8cff-7bac14ccd96d",
+			"name": "获取绑定设备列表",
+			"url": "http://{{ip}}:{{9292}}/yida/dev/devices/2",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "9d50e352-411b-4ac7-a584-0b5e14b25f97",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "c63cc863-840a-4787-b9f8-b8b2dacd77a8",
+			"name": "新增设备",
+			"url": "http://{{ip}}:{{9292}}/yida/dev/devices",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "9c990865-5d78-474a-ad5b-c193f7a3c649",
+			"rawModeData": "{\n    \"devCode\": \"\",\n    \"userId\": 6,\n    \"bindTime\": \"2018-10-10 15:49:02\",\n    \"status\": 1,\n    \"filterLifeTime\": 100,\n    \"online\": 1,\n    \"enableMultipleBind\": 0,\n    \"inventoryTime\": \"2018-10-10 15:45:19\"\n }",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c6ae0db7-7a20-4370-8510-78d8f0b2a42b",
+			"name": "删除设备",
+			"url": "http://{{ip}}:{{9292}}/yida/dev/devices/3",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "9c990865-5d78-474a-ad5b-c193f7a3c649",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "ee8a75b9-1767-4f47-8b66-b1e5d6c29afc",
+			"name": "获取微信用户信息",
+			"url": "http://{{ip}}:{{9292}}/yida/dev/info/0332vRGK0eN0a62jINEK0tZJGK02vRGj",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "9d50e352-411b-4ac7-a584-0b5e14b25f97",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "fc9495f9-8766-4513-b5b4-cb7d4825bc52",
+			"name": "删除",
+			"url": "https://{{ip}}:441/yida/ad/ads/1",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "8ddfb57c-ff83-4095-afcf-9ef82e4e84df",
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "fdd4568f-d8d3-48ff-a232-2ef82b4066af",
+			"name": "批量删除",
+			"url": "http://{{ip}}:{{9292}}/yida/dev/batch",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "DELETE",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": "9c990865-5d78-474a-ad5b-c193f7a3c649",
+			"rawModeData": "{\r\n    \"devIdList\":[\r\n        15\r\n    ]\r\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		}
+	]
+}

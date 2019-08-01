@@ -1,0 +1,10 @@
+.el-row {
+  display: flex;
+  align-items: flex-end;
+}
+.el-row .el-col {
+  margin-right: 10px;
+}
+.el-row .el-dialog__header {
+  background-color: #333;
+}

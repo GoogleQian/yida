@@ -1,0 +1,22 @@
+page{
+  height: 100%;
+}
+
+.btn {
+  margin-top: 80rpx;
+  display: inline-block;
+  width: 576rpx;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 5px;
+  border-radius: 30px;
+  height: 100rpx;
+  background: #d4d3db;
+  line-height: 100rpx;
+}
+
+.error{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

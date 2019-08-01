@@ -1,0 +1,12 @@
+<!--pages/valide_code/validate_code.wxml-->
+<!-- <text>pages/valide_code/validate_code.wxml</text> -->
+<view class='box'>
+  <input class="weui-input" value='{{phone}}' auto-focus placeholder="请输入手机号" bindinput="bindKeyInput" />
+  <view style='margin: 20rpx 0;overflow: hidden;'>
+    <input class="code_input weui-input" style='display: inline-block;box-sizing: border-box; width: 50%;' value='{{code}}' placeholder="请输入验证码" bindinput="bindCodeInput" />
+    <button class='code_btn' style='display: inline-block;width: 50%;box-sizing: border-box;float: right; height: 80rpx;border-radius: 0; font-size: 14px;' type="primary" size="default" plain="true" disabled="{{disabled1}}" bindtap='getValidateCode'>
+      {{text}}
+    </button>
+  </view>
+  <button style='background: #3385ff; color: #fff;margin-bottom: 10rpx;' size='default' loading="{{loading}}" size="default" plain='true' bindtap='postCode'>提交</button>
+</view>

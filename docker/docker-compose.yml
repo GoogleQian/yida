@@ -1,0 +1,22 @@
+version: "2.2"
+services:
+   yida-api:
+     image: yida-api:0.1
+     container_name: yida-api
+     volumes:
+      - /var/yida/:/var/yida/
+     networks: 
+       - yida
+
+   yida-nginx:
+        image: yida-nginx:0.1
+        ports:
+          - "8092:80"
+          - "443:443"
+        container_name: yida-api
+        networks:
+          - yida
+
+networks:
+   yida:
+    driver: bridge

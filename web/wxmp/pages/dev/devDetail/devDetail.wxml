@@ -1,0 +1,15 @@
+<!--pages/dev/devDetail/devDetail.wxml-->
+<view class='container'>
+  <image class='set' bindtap='gotoSet' src='./set.png'></image>
+  <view class='lifeTime'>
+    <text><text style='font-size: 60px;'>{{filterLifeTime}}</text>%</text>
+    <!-- <text style='color: #aaa;font-size: 14px;'>滤芯编码：{{filterCode}}</text> -->
+  </view>
+  <text style='font-size: 14px;margin-top: 20rpx;' wx:if="{{filterLifeTime > 10}}">滤芯不需要更换</text>
+  <text style='font-size: 14px;margin-top: 20rpx;' wx:if="{{filterLifeTime <= 10}}">滤芯寿命不足10%</text>
+  <text style='font-size: 14px;margin-top: 20rpx;' wx:if="{{filterLifeTime == 0}}">滤芯已损耗</text>
+  <view style='position: fixed; bottom: 50px;width: 80%; text-align: center; font-size: 12px;color: #fff;'>
+    <button style='background: #3385ff; color: #fff;margin-bottom: 10rpx;' type="warn" data-url="{{filterUrl}}" bindtap='gotoAd'>立即购买</button>
+    <!-- <text style='color: #333;font-size: 14px;'>激活滤芯</text> -->
+  </view>
+</view>

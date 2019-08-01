@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/dev/dev",
+    "pages/logs/logs",
+    "pages/dev/iptCid/iptCid",
+    "pages/dev/iptCid/devbinding/devbinding",
+    "pages/dev/devDetail/devDetail",
+    "pages/web/web",
+    "pages/dev/devDetail/set/set",
+    "pages/valide_code/validate_code"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "即热饮水机",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#007AFF",
+    "borderStyle": "black",
+    "paddingTop": "20rpx",
+    "list": [
+      {
+        "pagePath": "pages/dev/dev",
+        "text": "设备",
+        "iconPath": "./common/img/720/sj-1.png",
+        "selectedIconPath": "./common/img/720/sj-2.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "./common/img/720/w-1.png",
+        "selectedIconPath": "./common/img/720/w-2.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 1000000,
+    "connectSocket": 100000,
+    "uploadFile": 100000,
+    "downloadFile": 100000
+  }
+}

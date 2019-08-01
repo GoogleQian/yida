@@ -1,0 +1,14 @@
+/* pages/valide_code/validate_code.wxss */
+.box{
+  padding: 20rpx 0;
+  height: 100vh;
+  background: #f7f7f7;
+}
+input{
+  background: #fff;
+  /* padding: 20rpx; */
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 20rpx;
+  font-size: 14px;
+}

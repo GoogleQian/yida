@@ -1,0 +1,4 @@
+/* pages/dev/devDetail/set/set.wxss */
+.unbindDev{
+  padding: 10px;
+}

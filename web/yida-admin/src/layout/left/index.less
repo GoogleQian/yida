@@ -1,0 +1,68 @@
+.left {
+    height: 100%;
+    .h_title {
+        box-sizing: border-box;
+        color: #fff;
+        line-height: 44px;
+        padding-left: 20px;
+        border-bottom: 1px solid #3c5351;
+    }
+    .useriofo {
+        display: flex;
+        justify-content: space-around;
+        color: #fff;
+        padding: 10px 0;
+        border-bottom: 1px solid #3c5351;
+        img {
+            display: block;
+            background: #ccc;
+            border-radius: 50%;
+            padding: 5px;
+            width: 40px;
+            height: 40px;
+        }
+        .text {
+            display: flex;
+            flex-direction: column;
+            width: 120px;
+            justify-content: space-around;
+            align-items: flex-start;
+            .icon {
+                width: 100px;
+                color: #999;
+                display: flex;
+                justify-content: space-between;
+                i {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// 菜单条宽度（非收起状态）
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+}
+
+// 菜单条高度
+.el-menu-vertical-demo {
+    height: 100%;
+}
+
+// 激活背景色
+.el-menu-item.is-active {
+    background: #E74C3C !important;
+}
+
+.el-menu-item i {
+    color: #fff;
+}
+
+.el-submenu i {
+    color: #fff;
+}
+
+.el-menu{
+    border-right-color: #2F4355;
+}

@@ -1,0 +1,6 @@
+<view class='content'>
+  <view>
+    <input placeholder="请输入设备CID" focus='{{true}}' value='{{inputValue}}' bindinput="bindKeyInput"></input>
+    <text class='btn' bindtap='submit' size='mini'>确定</text>
+  </view>
+</view>
