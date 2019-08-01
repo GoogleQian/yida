@@ -1,0 +1,19 @@
+logging:
+     config: classpath:logback-dev.xml
+
+img:
+ imgUrl: http://localhost
+
+
+
+#EMQ Basic 认证
+appid: 21c40690fa4e5
+appsecret: Mjg1NjE0MzE1MTM3NTY0Mzc1MjI3MTg2NDA1MTc1NDU5ODE
+#EMQ服务器地址
+emq_server: http://39.105.103.1:8080
+#接口地址
+connect_url: /api/v3/connections/
+route_url: /api/v3/routes/
+
+server:
+  port: 9001

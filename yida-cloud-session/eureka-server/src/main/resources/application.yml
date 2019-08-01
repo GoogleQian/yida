@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: @profileActive@
+  security:
+    basic:
+      enabled: true
+    user:
+      name: admin
+      password: xiaoheDev520
+
+server:
+  port: 8761
+  tomcat:
+    max-threads: 1000
+    uri-encoding: UTF-8
+    max-http-header-size: 10240
+    max-http-post-size: 10240
+    max-connections: 20000
+eureka:
+  server:
+    enable-self-preservation: true
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8761/eureka/
+

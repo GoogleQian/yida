@@ -1,0 +1,57 @@
+server:
+   tomcat:
+      max-threads: 1000
+      uri-encoding: UTF-8
+      max-http-header-size: 10240
+      max-http-post-size: 10240
+      max-connections: 20000
+spring:
+    profiles:
+        active: @profileActive@
+    datasource:
+      type: com.zaxxer.hikari.HikariDataSource
+      hikari:
+        minimum-idle: 0
+        maximum-pool-size: 1000
+        auto-commit: true
+        idle-timeout: 60000
+        pool-name: DatebookHikariCP
+        max-lifetime: 1800000
+        connection-timeout: 30000
+        connection-test-query: SELECT 1
+        #        生效超时
+        validation-timeout: 3000
+    application:
+        name: mqtt-service
+    http:
+      encoding:
+        force: true
+        charset: utf-8
+        enabled: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://admin:xiaoheDev520@${eureka.instance.hostname}:8761/eureka/
+feign:
+  hystrix:
+    enabled: true
+#请求处理的超时时间
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6000
+
+
+
+
+
