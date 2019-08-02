@@ -1,10 +1,13 @@
 package com.etar.purifier.utils;
 
 import entity.common.entity.Result;
+import entity.dev.Device;
 import org.apache.commons.lang3.StringUtils;
 import utils.ConstantUtil;
 import utils.ResultCode;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 /**
@@ -58,5 +61,22 @@ public class DevCodeUtil {
                 break;
         }
         return result;
+    }
+
+    public static List<String> getDevCodes(List<Device> deviceList) {
+        List<String> devCodes = new ArrayList<>();
+
+        for (Device device : deviceList) {
+            devCodes.add(device.getDevCode());
+        }
+        return devCodes;
+    }
+
+    public static List<Integer> getUserIds(List<Device> deviceList) {
+        List<Integer> devCodes = new ArrayList<>();
+        for (Device device : deviceList) {
+            devCodes.add(device.getUserId());
+        }
+        return devCodes;
     }
 }

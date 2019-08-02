@@ -1,7 +1,7 @@
 eureka:
   instance:
     prefer-ip-address: true
-    hostname: 172.31.163.54 #40.73.24.36 #40.73.3.210
+    hostname: 172.31.163.54 # docker dev地址 ：172.31.163.54，如果不用dicker 就用 localhost
   client:
     serviceUrl:
       defaultZone: http://admin:xiaoheDev520@${eureka.instance.hostname}:8761/eureka/

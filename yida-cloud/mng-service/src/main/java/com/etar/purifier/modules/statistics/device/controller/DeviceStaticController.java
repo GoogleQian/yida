@@ -1,22 +1,16 @@
 package com.etar.purifier.modules.statistics.device.controller;
 
 import com.etar.purifier.modules.statistics.wechat.service.WxUserStaticService;
-import com.etar.purifier.utils.DateUtil;
 import entity.devicestatic.DeviceStatic;
-import entity.devicestatic.QueryDeviceStatic;
 import com.etar.purifier.modules.statistics.device.service.DeviceStaticService;
 import entity.common.entity.DataResult;
-import entity.common.entity.PageBean;
 import entity.common.entity.Result;
 import entity.wxuserstatic.WxUserStatic;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.*;
 
 /**

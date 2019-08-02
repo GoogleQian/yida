@@ -4,8 +4,6 @@ import com.etar.purifier.modules.dev.service.DeviceService;
 import com.etar.purifier.modules.statistics.device.service.DeviceStaticService;
 import com.etar.purifier.modules.statistics.wechat.service.WxUserStaticService;
 import com.etar.purifier.modules.users.service.UserService;
-import com.etar.purifier.utils.DateUtil;
-import entity.dev.Device;
 import entity.devicestatic.DeviceStatic;
 import entity.wxuserstatic.WxUserStatic;
 import org.springframework.beans.factory.annotation.Autowired;
