@@ -1,0 +1,4 @@
+com\xiaohe\eurekaserver\listener\SendMailUtil.class
+com\xiaohe\eurekaserver\config\WebSecurityConfig.class
+com\xiaohe\eurekaserver\listener\EurekaStateChangeListener.class
+com\xiaohe\eurekaserver\EurekaServerApplication.class

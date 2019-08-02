@@ -1,0 +1,51 @@
+spring:
+    profiles:
+        active: prod
+    datasource:
+      type: com.zaxxer.hikari.HikariDataSource
+      hikari:
+        minimum-idle: 1
+        maximum-pool-size: 15
+        auto-commit: true
+        idle-timeout: 60000
+        pool-name: DatebookHikariCP
+        max-lifetime: 1800000
+        connection-timeout: 30000
+        connection-test-query: SELECT 1
+#        生效超时
+        validation-timeout: 3000
+    mvc:
+      static-path-pattern: /**
+    application:
+      name: wx-service
+    http:
+      encoding:
+        force: true
+        charset: utf-8
+        enabled: true
+server:
+   tomcat:
+    max-threads: 1000
+    uri-encoding: UTF-8
+    max-http-header-size: 10240
+    max-http-post-size: 10240
+    max-connections: 20000
+   ssl:
+     key-store: classpath:215072324040204.pfx
+     key-store-password: 215072324040204
+     key-store-type: PKCS12
+   port: 443
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:xiaoheDev520@${eureka.instance.hostname}:8761/eureka/
+  instance:
+    hostname: localhost
+feign:
+  hystrix:
+    enabled: true
+
+ribbon:
+  eureka:
+    enabled: true

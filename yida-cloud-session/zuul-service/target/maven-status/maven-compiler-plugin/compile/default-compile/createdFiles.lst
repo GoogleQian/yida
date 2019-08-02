@@ -1,0 +1,3 @@
+com\zypcy\springcloud\zuul\config\FeignBeanFactoryPostProcessor.class
+com\zypcy\springcloud\zuul\ZuulApplication.class
+com\zypcy\springcloud\zuul\config\WebFilter.class

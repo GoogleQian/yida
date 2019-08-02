@@ -1,0 +1,27 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.etar.purifier.config.ShardingMasterSlaveConfig",
+      "name": "sharding.jdbc",
+      "type": "com.etar.purifier.config.ShardingMasterSlaveConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.etar.purifier.config.ShardingMasterSlaveConfig",
+      "name": "sharding.jdbc.data-sources",
+      "type": "java.util.Map<java.lang.String,com.zaxxer.hikari.HikariDataSource>"
+    },
+    {
+      "sourceType": "com.etar.purifier.config.ShardingMasterSlaveConfig",
+      "name": "sharding.jdbc.data-sources2",
+      "type": "java.util.Map<java.lang.String,com.alibaba.druid.pool.DruidDataSource>"
+    },
+    {
+      "sourceType": "com.etar.purifier.config.ShardingMasterSlaveConfig",
+      "name": "sharding.jdbc.master-slave-rule",
+      "type": "io.shardingsphere.api.config.MasterSlaveRuleConfiguration"
+    }
+  ]
+}

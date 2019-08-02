@@ -1,0 +1,96 @@
+version: '3'
+services:
+#  eureka-server:
+#      image: eureka-server:0.0.1
+#      container_name: yida-eureka-server
+#      build:
+#        context: eureka-server
+#        dockerfile: src/main/docker/Dockerfile
+#      restart: always
+#      networks:
+#        - yida
+#      ports:
+#        - 8761:8761
+#      env_file: .env
+#  zull-service:
+#      image: zull-service:0.0.1
+#      container_name: yida-zull-service
+#      build:
+#        context: zuul-service
+#        dockerfile: src/main/docker/Dockerfile
+#      restart: always
+#      networks:
+#        - yida
+#      ports:
+#        - 8769:8769
+#      env_file: .env
+#      depends_on:
+#        - eureka-server
+#
+#  auth-service:
+#    image: auth-service:0.0.1
+#    container_name: yida-auth-service
+#    build:
+#      context: auth-service
+#      dockerfile: src/main/docker/Dockerfile
+#    networks:
+#      - yida
+#    ports:
+#      - 9002:9002
+#    depends_on:
+#      - eureka-server
+#      - zull-service
+#
+#  mng-service:
+#    image: mng-service:0.0.1
+#    container_name: yida-mng-service
+#    build:
+#      context: mng-service
+#      dockerfile: src/main/docker/Dockerfile
+#    networks:
+#      - yida
+#    ports:
+#      - 8789:8789
+#    depends_on:
+#      - eureka-server
+#      - zull-service
+#
+  mqtt-service:
+    image: mqtt-service:0.0.1
+    container_name: yida-mqtt-service
+    build:
+      context: mqtt-service
+      dockerfile: src/main/docker/Dockerfile
+    networks:
+      - yida
+    ports:
+      - 7001:7001
+#    deploy:
+#      replicas: 5
+#      restart_policy:
+#        condition: on-failure
+#      resources:
+#        limits:
+#          cpus: "0.1"
+#          memory: 50M
+#    mem_limit: 200m
+#    depends_on:
+#      - eureka-server
+#      - zull-service
+#
+#  miniprogram-service:
+#    image: miniprogram-service:0.0.1
+#    container_name: yida-miniprogram-service
+#    build:
+#      context: miniprogram-service
+#      dockerfile: src/main/docker/Dockerfile
+#    networks:
+#      - yida
+#    ports:
+#      - 443:443
+#    depends_on:
+#      - eureka-server
+#      - zull-service
+networks:
+  yida:
+    external: false
