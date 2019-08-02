@@ -74,7 +74,7 @@ public interface DeviceService extends IBaseService<Device, Integer> {
      * @param userId   用户id
      * @return page对象
      */
-    Page<Device> findPage(int page, int pageSize, String devCode, Integer online, Integer userId,String bindAccount);
+    Page<Device> findPage(int page, int pageSize, String devCode, Integer online, Integer userId, String bindAccount);
 
     /**
      * 查询用户下所有设备
@@ -268,6 +268,14 @@ public interface DeviceService extends IBaseService<Device, Integer> {
      * @return 总数
      */
     Integer countDevMsgByPhone(String phone);
+
+    /**
+     * 通过版本号统计的设备数
+     *
+     * @param verNum 设备版本号
+     * @return 设备数
+     */
+    Integer countByVersionNum(int verNum);
 }
 
 

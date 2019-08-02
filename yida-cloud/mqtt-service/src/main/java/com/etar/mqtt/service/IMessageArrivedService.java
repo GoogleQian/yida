@@ -17,7 +17,7 @@ public interface IMessageArrivedService {
      *
      * @param message 消息
      */
-    void adResponse(String message);
+    void broadcastResponse(String message);
 
     /**
      * 更换滤芯

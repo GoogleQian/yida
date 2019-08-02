@@ -65,6 +65,10 @@ public interface ConstantUtil {
     String MQTT_TIME_PREFIX = "2,";
     String MQTT_COMMA = ",";
     /**
+     * 版本号
+     */
+    String MQTT_VERSION = "1";
+    /**
      * MQTT连接异常
      */
     int MQTT_CONNECT_ERROR = 128;
@@ -114,6 +118,15 @@ public interface ConstantUtil {
      * 跟换滤芯
      */
     String MQTT_HARDWARE_CHANGE_FILTER = "6,";
+    /**
+     * 单独下发固件前缀
+     */
+    String MQTT_FIRMWARE_DEV_PREFIX = "9,";
+    /**
+     * 广播下发固件前缀
+     */
+    String MQTT_FIRMWARE_BROADCAST_PREFIX = "3,";
+
     /**
      * 广告应答
      */
@@ -171,4 +184,9 @@ public interface ConstantUtil {
      * 图形验证码失效时间
      */
     int CODE_EXPIRE = 60;
+
+
+    String ADV_RESPONSE="1";
+    String FIRMWARE_RESPONSE="2";
+
 }

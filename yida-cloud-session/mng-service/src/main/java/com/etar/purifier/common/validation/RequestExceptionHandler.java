@@ -18,6 +18,7 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -120,6 +121,18 @@ public class RequestExceptionHandler {
         Result result = new Result();
         return result.error(e.getRet(), e.getMsg());
     }
+
+    /**
+     * 确实参数异常
+     */
+    @ExceptionHandler(MissingServletRequestParameterException.class)
+    public Result missingServletRequestParameterException(MissingServletRequestParameterException e) {
+        saveSysLog(StringUtil.errorInfo(e));
+        logger.error(e.getMessage());
+        Result result = new Result();
+        return result.error(21, "缺少必要参数：" + e.getParameterName());
+    }
+
 
     /**
      * 记录异常日志

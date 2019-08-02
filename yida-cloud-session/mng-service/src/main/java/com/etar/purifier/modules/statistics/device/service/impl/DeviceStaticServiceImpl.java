@@ -160,15 +160,19 @@ public class DeviceStaticServiceImpl implements DeviceStaticService {
 
     @Override
     public DeviceStatic getTotalStatic() {
-        DeviceStatic deviceStatic =deviceStaticRepository.getTotalStatic();
+        DeviceStatic deviceStatic = deviceStaticRepository.getTotalStatic();
         return deviceStatic;
     }
+
     @Override
     public List<DeviceStatic> findByCountTimeBetween(String startTime, String endTime) {
         return deviceStaticRepository.findByCountTimeBetween(startTime, endTime);
     }
 
-
+    @Override
+    public DeviceStatic findByDate(Date countTime) {
+        return deviceStaticRepository.findByDate(countTime);
+    }
 }
 
 

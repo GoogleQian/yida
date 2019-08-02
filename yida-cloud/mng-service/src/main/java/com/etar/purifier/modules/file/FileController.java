@@ -19,6 +19,8 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author hzh
@@ -34,12 +36,16 @@ public class FileController {
      **/
     private String[] types = {".jpg", ".bmp", ".jpeg", ".png", ".gif"};
     /**
+     * 固件格式
+     **/
+    private String firmware = ".bin";
+    /**
      * 图片保存路径
      */
     @Value("${img.uploadPath}")
     private String uploadPath;
     /**
-     * t图片重命名前缀
+     * 图片重命名前缀
      */
     @Value("${img.prefix}")
     private String imgPrefix;
@@ -53,6 +59,26 @@ public class FileController {
      */
     @Value("${img.imgUrl}")
     private String imgUrl;
+    /**
+     * 图片保存路径
+     */
+    @Value("${firmware.uploadPath}")
+    private String firmwareUploadPath;
+    /**
+     * 图片重命名前缀
+     */
+    @Value("${firmware.prefix}")
+    private String firmwarePrefix;
+    /**
+     * 返回给前端的访问路径
+     */
+    @Value("${firmware.visitPath}")
+    private String firmwareVisitPath;
+    /**
+     * 返回给前端的访问域名
+     */
+    @Value("${firmware.firmwareUrl}")
+    private String firmwareUrl;
     /**
      * 返回给前端的访问域名
      */
@@ -104,6 +130,57 @@ public class FileController {
         return result;
     }
 
+
+    /**
+     * 固件上传
+     *
+     * @param file 图片
+     * @return 上传结果
+     */
+    @PostMapping(value = "/firmware")
+    @LogOperate(description = "固件上传")
+    public Result uploadFirmware(@RequestParam(value = "file") MultipartFile file) {
+//        File file1 = new File("d:/firmware/firmware-1561975102160.bin");
+//        if (file1.exists()) {
+//            file1.delete();
+//        }
+        DataResult result = new DataResult();
+        String fileName;
+        System.out.println(file.isEmpty());
+        fileName = file.getOriginalFilename();
+        //比较图片格式
+        assert fileName != null;
+        String type = fileName.substring(fileName.lastIndexOf("."));
+        if (!firmware.equals(type)) {
+            return result.error(ResultCode.FIRMWARE_FORMAT_ERROR);
+        }
+        BufferedOutputStream out;
+        File fileSourcePath = new File(firmwareUploadPath);
+        if (!fileSourcePath.exists()) {
+            fileSourcePath.mkdirs();
+        }
+        //重命名，防重复
+        fileName = firmwarePrefix + System.currentTimeMillis() + type;
+        log.info("上传的固件名为：" + fileName);
+        long size;
+        try {
+            out = new BufferedOutputStream(
+                    new FileOutputStream(new File(fileSourcePath, fileName)));
+            size = file.getSize();
+            out.write(file.getBytes());
+            out.flush();
+        } catch (Exception e) {
+            log.info(e.getMessage());
+            return result.error(ResultCode.FIRMWARE_SAVE_ERROR);
+        }
+        result.ok();
+        Map<String, Object> map = new HashMap<>();
+        map.put("ossUrl", getFirmwareUrl(fileName));
+        map.put("size", size);
+        result.setDatas(map);
+        return result;
+    }
+
     /**
      * 获取图片全路径
      *
@@ -117,5 +194,16 @@ public class FileController {
         return basePath + visitPath + fileName;
     }
 
-
+    /**
+     * 获取图片全路径
+     *
+     * @param fileName 文件名
+     * @return 相对路径
+     */
+    private String getFirmwareUrl(String fileName) {
+        String getContextPath = request.getContextPath();
+        String basePath = firmwareUrl + getContextPath;
+        log.info("当前路径:{}", basePath);
+        return basePath + firmwareVisitPath + fileName;
+    }
 }

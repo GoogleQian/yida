@@ -293,7 +293,7 @@ export default {
       if (rows && rows.length > 0) {
       } else {
         this.$message({
-          message: '请至少选择一项',
+          message: '请至少选择一项进行操作',
           type: 'warning'
         })
         return;

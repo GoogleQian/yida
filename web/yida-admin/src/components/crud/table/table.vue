@@ -104,7 +104,7 @@ export default {
     mulDel() {
       if (this.multipleSelection.length < 1) {
         this.$message({
-          message: "请至少选择一项",
+          message: "请至少选择一项进行操作",
           type: "warning"
         });
         return;

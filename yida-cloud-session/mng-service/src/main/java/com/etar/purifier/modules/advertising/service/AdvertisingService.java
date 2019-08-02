@@ -70,6 +70,8 @@ public interface AdvertisingService extends IBaseService<Advertising, Integer> {
      * @return 查询结果
      */
     Advertising findByState(Integer state);
+
+    Advertising findByName(String adName);
 }
 
 

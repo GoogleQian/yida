@@ -39,7 +39,7 @@ public class TimerService {
     /**
      * 统计设备
      */
-    @Scheduled(cron="58 59 23 * * *") //cron = 0/20 * * * * *
+    @Scheduled(cron = "58 59 23 * * *") //cron = 0/20 * * * * *
     public void contDayRegDevice() {
         Date now = new Date();
         //当天开始时间
@@ -54,7 +54,7 @@ public class TimerService {
         //统计当天激活设备数
         long activeCount = deviceService.countTodayActive(startTime, endTime);
         //统计当天入库数
-        long inventoryCount = deviceService.countInventoryc(startTime,endTime);
+        long inventoryCount = deviceService.countInventoryc(startTime, endTime);
         //统计当前设备总数
         long totalDeviceCount = deviceService.count();
 
@@ -65,8 +65,10 @@ public class TimerService {
         deviceStatic.setDailyCount(inventoryCount);
         deviceStatic.setTotalCount(totalDeviceCount);
         deviceStatic.setDate(startTime);
-
-        deviceStaticService.save(deviceStatic);
+        DeviceStatic deviceStatic1 = deviceStaticService.findByDate(startTime);
+        if (deviceStatic1 == null) {
+            deviceStaticService.save(deviceStatic);
+        }
     }
 
     /**

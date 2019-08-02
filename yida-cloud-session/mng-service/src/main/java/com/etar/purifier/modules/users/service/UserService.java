@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 /**
  * User接口
@@ -67,6 +68,13 @@ public interface UserService extends IBaseService<User, Integer> {
     Page<User> findPage(Integer page, Integer pageSize, String nickName);
 
     /**
+     * 昵称搜索
+     * @param nickName 昵称
+     * @return 查询结果
+     */
+    Set<Integer> findUserIdsByNickName(String nickName);
+
+    /**
      * 删除用户并解除该用户下设备的绑定
      *
      * @param userId 用户id
@@ -98,6 +106,13 @@ public interface UserService extends IBaseService<User, Integer> {
      * @return 人数
      */
     long countTodayRegisterUser(Date startTime, Date endTime);
+
+    /**
+     * 通过用户id查询
+     * @param userIds 用户id集合
+     * @return 结果
+     */
+    List<User> findByIdIn(List<Integer> userIds);
 }
 
 

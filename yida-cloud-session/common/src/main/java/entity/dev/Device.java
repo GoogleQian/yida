@@ -82,6 +82,16 @@ public class Device implements Serializable {
     @Transient
     private String bindAccount;
     /**
+     * 固件名称
+     */
+    @Transient
+    private String firmwareName;
+    /**
+     * 固件版本
+     */
+    @Transient
+    private String firmwareVersion;
+    /**
      * ip地址
      */
     private String ip;
@@ -215,5 +225,21 @@ public class Device implements Serializable {
 
     public void setBluetoothMac(String bluetoothMac) {
         this.bluetoothMac = bluetoothMac;
+    }
+
+    public String getFirmwareName() {
+        return firmwareName;
+    }
+
+    public void setFirmwareName(String firmwareName) {
+        this.firmwareName = firmwareName;
+    }
+
+    public String getFirmwareVersion() {
+        return firmwareVersion;
+    }
+
+    public void setFirmwareVersion(String firmwareVersion) {
+        this.firmwareVersion = firmwareVersion;
     }
 }

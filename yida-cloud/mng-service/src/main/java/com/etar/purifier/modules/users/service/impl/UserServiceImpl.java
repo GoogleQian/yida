@@ -210,17 +210,17 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll(specification, pageable);
     }
 
-	@Override
-	public Set<Integer> findUserIdsByNickName(String nickName) {
+    @Override
+    public Set<Integer> findUserIdsByNickName(String nickName) {
         List<User> byNickNameLike = userRepository.findByNickNameLike("%" + nickName + "%");
-        if(!CollectionUtils.isEmpty(byNickNameLike)){
+        if (!CollectionUtils.isEmpty(byNickNameLike)) {
             return byNickNameLike.stream().map(User::getId).collect(Collectors.toSet());
-        }else {
+        } else {
             return null;
         }
     }
 
-	@Override
+    @Override
     public void delUserAndUnboundDev(Integer userId) {
         List<Device> devices = deviceService.findByUserId(userId);
         if (!CollectionUtils.isEmpty(devices)) {
@@ -246,6 +246,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public long countTodayRegisterUser(Date startTime, Date endTime) {
         return userRepository.countByRegTimeBetween(startTime, endTime);
+    }
+
+    @Override
+    public List<User> findByIdIn(List<Integer> userIds) {
+        return userRepository.findByIdIn(userIds);
     }
 }
 

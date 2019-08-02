@@ -3,7 +3,17 @@
     <!-- 搜索 -->
     <z-search :searchItems="searchItems" @search="search"></z-search>
     <!-- 功能+table -->
-    <z-table :tableData="tableData" :tableColumns="tableColumns" :page="page" :funcs="funcs" :lineFuncs="lineFuncs" @lineFunc="lineFunc" @func="func" @handleCurrentChange="handleCurrentChange" v-loading="tableLoading"></z-table>
+    <z-table
+      :tableData="tableData"
+      :tableColumns="tableColumns"
+      :page="page"
+      :funcs="funcs"
+      :lineFuncs="lineFuncs"
+      @lineFunc="lineFunc"
+      @func="func"
+      @handleCurrentChange="handleCurrentChange"
+      v-loading="tableLoading"
+    ></z-table>
     <!-- 新增/编辑dialog -->
     <el-dialog :title="dialogTitle" :visible.sync="dialogVisible">
       <el-form :model="dialogData" ref="ruleForm" label-width="100px" class="demo-ruleForm">
@@ -28,7 +38,9 @@
     </el-dialog>
     <!-- 审核弹窗 -->
     <el-dialog :visible.sync="adVisible" width="30%">
-      <div slot="title"><i class="el-icon-warning" style="color: #E6A23C;"></i> &nbsp;提示</div>
+      <div slot="title">
+        <i class="el-icon-warning" style="color: #E6A23C;"></i> &nbsp;提示
+      </div>
       <p>{{adTitle}}</p>
       <span slot="footer" class="dialog-footer">
         <el-button type="success" @click="confirmVerify(1)">审核通过</el-button>
@@ -207,7 +219,7 @@ export default {
         });
     },
     view(row) {
-      console.log(row)
+      console.log(row);
       this.$router.push({
         path: "/serve/ad/edit",
         query: { row: JSON.stringify(row) }
@@ -327,7 +339,7 @@ export default {
       menus.map(item => {
         if (item.name === "设备待机广告") {
           item.list.map(subItem => {
-            _funcs.push(subItem.name)
+            _funcs.push(subItem.name);
           });
         }
       });

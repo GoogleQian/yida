@@ -69,10 +69,19 @@ export default {
       this.$emit("query", this.queryParams);
     },
     selChange(val){
-      console.log(1,val);
+      // console.log(1,val);
       this.value = val;
-      this.queryParams.online = val;
-      this.queryParams.status = val;
+      if (val === 0 || val === 1) {
+        this.queryParams.online = val;
+      }else{
+        this.queryParams.online = null;
+      }
+      if (val === 0 || val === 1) {
+        this.queryParams.status = val;
+      }else{
+        this.queryParams.status = null;
+      }
+
     }
   }
 };

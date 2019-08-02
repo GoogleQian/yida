@@ -86,7 +86,9 @@ public class MqttPushClient {
             boolean isBroadCastSendAd = ConstantUtil.BROADCAST_TOP.equals(topic) && pushMessage.startsWith(ConstantUtil.MQTT_ADV_PREFIX_BROADCAST);
             //是否是开机下发广告
             boolean isOnlineSendAd = topic.startsWith(ConstantUtil.DOWN_TOPIC) && pushMessage.startsWith(ConstantUtil.MQTT_ADV_PREFIX_ONLINE);
-            if (isOnlineSendAd || isBroadCastSendAd) {
+            //是否是单独测试的广告
+            boolean isSendAdToDev = topic.startsWith(ConstantUtil.DOWN_TOPIC) && pushMessage.startsWith(ConstantUtil.MQTT_ADV_PREFIX_THE_DEV);
+            if (isOnlineSendAd || isBroadCastSendAd || isSendAdToDev) {
                 LOGGER.info(topic + "下发广告，对广告进行Unicode编码：" + pushMessage);
                 bytes = MqttUtil.adUnicode(pushMessage);
             } else {

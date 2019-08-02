@@ -32,6 +32,16 @@ img:
   #环境地址
   imgUrl: http://123.57.148.29
 
+firmware:
+ #文件保存路径
+ uploadPath:  /var/firmware/
+ #返回给前端的访问路径
+ visitPath: /firmware/
+ #重命名图片前缀
+ prefix: firmware-
+ #环境地址
+ firmwareUrl: http://123.57.148.29
+
 mqtt:
   host: tcp://yidasvr.zsxiaohe.com:1883
   clientid: backend:${random.int[1024,65536]}
@@ -51,5 +61,5 @@ connect_url: /api/v3/connections/
 route_url: /api/v3/routes/
 
 server:
-  port: 17002
+  port: 8787
 

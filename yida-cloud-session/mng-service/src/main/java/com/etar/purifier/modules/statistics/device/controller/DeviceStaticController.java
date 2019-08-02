@@ -1,11 +1,14 @@
 package com.etar.purifier.modules.statistics.device.controller;
 
+import com.etar.purifier.modules.statistics.wechat.service.WxUserStaticService;
+import com.etar.purifier.utils.DateUtil;
 import entity.devicestatic.DeviceStatic;
 import entity.devicestatic.QueryDeviceStatic;
 import com.etar.purifier.modules.statistics.device.service.DeviceStaticService;
 import entity.common.entity.DataResult;
 import entity.common.entity.PageBean;
 import entity.common.entity.Result;
+import entity.wxuserstatic.WxUserStatic;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDate;
+import java.util.*;
 
 /**
  * DeviceStaticController层
@@ -29,6 +31,9 @@ public class DeviceStaticController {
     private static Logger log = LoggerFactory.getLogger(DeviceStaticController.class);
     @Autowired
     private DeviceStaticService deviceStaticService;
+    @Autowired
+    private WxUserStaticService wxUserStaticService;
+
 
     @GetMapping(value = "/device/days")
 //    @RequiresPermissions("sys:device:static")
@@ -51,7 +56,19 @@ public class DeviceStaticController {
         DataResult result = new DataResult();
         try {
             DeviceStatic deviceStatic = deviceStaticService.getTotalStatic();
-            result.setDatas(deviceStatic);
+            Map<String, Object> map = new HashMap<>(3);
+            map.put("devOverview", deviceStatic);
+            Date date = new Date();
+            Date dateBefore = DateUtil.getDateBefore(date, 6);
+            String end = DateUtil.format(date, DateUtil.DEFAULT_DAY_FORMAT);
+            String start = DateUtil.format(dateBefore, DateUtil.DEFAULT_DAY_FORMAT);
+            //用户七天新增记录
+            List<WxUserStatic> userStaticList = wxUserStaticService.findByCountTimeBetween(dateBefore, date);
+            //设备七天新增记录
+            List<DeviceStatic> devStaticList = deviceStaticService.findByCountTimeBetween(start, end);
+            map.put("devDays", devStaticList);
+            map.put("userDays", userStaticList);
+            result.setDatas(map);
         } catch (Exception e) {
             e.printStackTrace();
             log.error(e.getMessage());
@@ -60,3 +77,5 @@ public class DeviceStaticController {
         return result.ok();
     }
 }
+
+

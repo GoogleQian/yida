@@ -1,6 +1,8 @@
 package com.etar.purifier.modules.dev.service;
 
 import com.etar.purifier.base.IBaseService;
+import entity.common.entity.PageBean;
+import entity.dev.DevVo;
 import entity.common.entity.Result;
 import entity.dev.Device;
 import org.eclipse.paho.client.mqttv3.MqttException;
@@ -68,11 +70,11 @@ public interface DeviceService extends IBaseService<Device, Integer> {
      * @param page     第几页
      * @param pageSize 每页个数
      * @param devCode  设备编号
-     * @param online    在线状态
+     * @param online   在线状态
      * @param userId   用户id
      * @return page对象
      */
-    Page<Device> findPage(int page, int pageSize, String devCode,Integer online, Integer userId);
+    Page<Device> findPage(int page, int pageSize, String devCode, Integer online, Integer userId, String bindAccount);
 
     /**
      * 查询用户下所有设备
@@ -148,17 +150,18 @@ public interface DeviceService extends IBaseService<Device, Integer> {
      */
     @Transactional(rollbackFor = Exception.class)
     int updateOnline(Integer online, String devCode) throws MqttException;
+
     /**
      * 开机修改上线状态
      *
      * @param online  上线状态
-     * @param ip  ip
+     * @param ip      ip
      * @param devCode 设备码
      * @return int int
      * @throws MqttException MqttException
      */
     @Transactional(rollbackFor = Exception.class)
-    int updateOnlineAndIpAndTime(Integer online,  String ip, String devCode) throws MqttException;
+    int updateOnlineAndIpAndTime(Integer online, String ip, String devCode) throws MqttException;
 
     /**
      * 更新滤芯寿命
@@ -197,6 +200,7 @@ public interface DeviceService extends IBaseService<Device, Integer> {
      * 下载模板
      */
     void downloadTemplate();
+
     /**
      * 批量导入
      *
@@ -225,22 +229,53 @@ public interface DeviceService extends IBaseService<Device, Integer> {
      *
      * @return 设备数
      */
-    long countTodayBind(Date startTime,Date endTime);
+    long countTodayBind(Date startTime, Date endTime);
 
     /**
      * 统计今天激活设备数
      *
      * @return 设备数
      */
-    long countTodayActive(Date startTime,Date endTime);
+    long countTodayActive(Date startTime, Date endTime);
 
     /**
      * 统计今天入库设备数
      *
      * @return 设备数
      */
-    long countInventoryc(Date startTime,Date endTime);
+    long countInventoryc(Date startTime, Date endTime);
 
+    /**
+     * 通过手机号关联查询设备号、手机号、设备在线状态
+     *
+     * @param phone 手机号
+     * @return 查询结果
+     */
+    PageBean<DevVo> findDevMsgByPhone(String phone, Integer page, Integer pageSize);
+
+    /**
+     * 通过设备号查询设备号、手机号、设备在线状态
+     *
+     * @param devCode 设备号
+     * @return 查询结果
+     */
+    PageBean<DevVo> findDevMsgByDevCode(String devCode);
+
+    /**
+     * 通过手机号关联查询设备号的总数
+     *
+     * @param phone 手机号
+     * @return 总数
+     */
+    Integer countDevMsgByPhone(String phone);
+
+    /**
+     * 通过版本号统计的设备数
+     *
+     * @param verNum 设备版本号
+     * @return 设备数
+     */
+    Integer countByVersionNum(int verNum);
 }
 
 

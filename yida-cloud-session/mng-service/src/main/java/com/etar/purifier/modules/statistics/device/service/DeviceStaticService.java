@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * <p>
- *  DeviceStatic接口
+ * DeviceStatic接口
  * </p>
  *
  * @author gmq
@@ -23,7 +23,8 @@ public interface DeviceStaticService extends IBaseService<DeviceStatic, Long> {
 
     /**
      * 按条件查询
-     * @param page 页数
+     *
+     * @param page     页数
      * @param pageSize 数量
      * @param
      * @return Page
@@ -41,6 +42,14 @@ public interface DeviceStaticService extends IBaseService<DeviceStatic, Long> {
      * @return 时间段内查询结果
      */
     List<DeviceStatic> findByCountTimeBetween(String startTime, String endTime);
+
+    /**
+     * 通过统计时间查询
+     *
+     * @param date 统计日期
+     * @return 返回结果
+     */
+    DeviceStatic findByDate(Date date );
 }
 
 

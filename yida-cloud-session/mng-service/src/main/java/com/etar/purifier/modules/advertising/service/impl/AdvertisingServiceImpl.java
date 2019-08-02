@@ -192,6 +192,12 @@ public class AdvertisingServiceImpl implements AdvertisingService {
     public Advertising findByState(Integer state) {
         return advertisingRepository.findByState(state);
     }
+
+    @Override
+    public Advertising findByName(String adName) {
+        return advertisingRepository.findByName(adName);
+    }
+
 }
 
 

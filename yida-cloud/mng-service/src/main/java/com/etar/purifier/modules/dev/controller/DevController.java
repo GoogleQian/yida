@@ -4,6 +4,7 @@ import com.etar.purifier.common.annotation.LogOperate;
 import com.etar.purifier.modules.dev.service.DeviceService;
 import com.etar.purifier.modules.emqclient.service.EmqClientService;
 import com.etar.purifier.modules.filterinfo.service.FilterInfoService;
+import com.etar.purifier.modules.firmwarestatic.service.FirmwareStaticService;
 import com.etar.purifier.modules.mqtt.MqttService;
 import com.etar.purifier.utils.DateUtil;
 import com.etar.purifier.utils.DevCodeUtil;
@@ -12,6 +13,7 @@ import entity.dev.DevVo;
 import entity.dev.Device;
 import entity.emqclient.EmqClient;
 import entity.emqclient.QueryEmqClient;
+import entity.firmwarestatic.FirmwareStatic;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,32 +43,21 @@ import java.util.stream.Collectors;
 @Validated
 public class DevController {
 
-
-    @Value("${emq_server}")
-    private String emqServer;
-    @Value("${connect_url}")
-    private String connectUrl;
-    @Value("${route_url}")
-    private String routeUrl;
-    @Value("${appid}")
-    private String appid;
-    @Value("${appsecret}")
-    private String appsecret;
-
-
     private static Logger log = LoggerFactory.getLogger(DevController.class);
 
     private final DeviceService deviceService;
     private final MqttService mqttService;
     private final EmqClientService emqClientService;
     private final FilterInfoService filterInfoService;
+    private final FirmwareStaticService firmwareStaticService;
 
     @Autowired
-    public DevController(DeviceService deviceService, MqttService mqttService, EmqClientService emqClientService, FilterInfoService filterInfoService) {
+    public DevController(DeviceService deviceService, MqttService mqttService, EmqClientService emqClientService, FilterInfoService filterInfoService, FirmwareStaticService firmwareStaticService) {
         this.deviceService = deviceService;
         this.mqttService = mqttService;
         this.emqClientService = emqClientService;
         this.filterInfoService = filterInfoService;
+        this.firmwareStaticService = firmwareStaticService;
     }
 
     /**
@@ -326,13 +317,14 @@ public class DevController {
                                  @RequestParam(value = "devCode", required = false, defaultValue = "") String devCode,
                                  @RequestParam(value = "online", required = false, defaultValue = "-1") Integer online,
                                  @RequestParam(value = "userId", required = false) Integer userId,
-                                 @RequestParam(value = "bindAccount", required = false,defaultValue = "") String bindAccount) {
+                                 @RequestParam(value = "bindAccount", required = false, defaultValue = "") String bindAccount) {
         DataResult result = new DataResult();
-        Page<Device> devicePage = deviceService.findPage(page - 1, pageSize, devCode, online, userId,bindAccount);
+        Page<Device> devicePage = deviceService.findPage(page - 1, pageSize, devCode, online, userId, bindAccount);
         List<Device> deviceList = devicePage.getContent();
         if (!deviceList.isEmpty()) {
             //一般是分页后的数据集合，不会很多
             deviceService.getDevBindAccount(deviceList);
+            firmwareStaticService.getFirmwareMsg(deviceList);
         }
         PageBean<Device> pageBean = new PageBean<>();
         pageBean.setCurPage(page);

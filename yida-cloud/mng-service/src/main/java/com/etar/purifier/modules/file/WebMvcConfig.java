@@ -21,7 +21,6 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-
         if (!registry.hasMappingForPattern(PATTERN)) {
             //uploadPath为文件保存路径，imgResource 为url访问路径资源，即将保存路径转换为访问路径，
             System.out.println("uploadPath路径：" + uploadPath);

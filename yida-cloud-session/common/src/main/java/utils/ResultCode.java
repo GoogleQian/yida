@@ -40,6 +40,12 @@ public enum ResultCode {
     IMG_FORMAT_ERROR(1002, "文件格式错误"),
     IMG_SAVE_ERROR(1003, "文件保存异常"),
     IMG_SIZE_ERROR(1004, "文件太大"),
+    FIRMWARE_IS_EMPTY(1005, "所传固件为空"),
+    FIRMWARE_FORMAT_ERROR(1006, "固件格式错误"),
+    FIRMWARE_SAVE_ERROR(1007, "固件保存异常"),
+    FIRMWARE_SIZE_ERROR(1008, "固件太大"),
+    FILE_NULL_ERROR(1009, "所选文件为空"),
+
     /*设备相关：10001-19999*/
     FILTER_INFO_NOT_EXIST(10001, "滤芯编号不存在"),
     FILTER_INFO_CODE_EXIST(10002, "滤芯编号已存在"),
@@ -95,10 +101,17 @@ public enum ResultCode {
     ADS_IS_NULL(70004, "查询结果集为空"),
     AD_UNREADABLE_SOLGAN(70005, "广告内容会引起硬件乱码，请重新修改！"),
     /*用户资料相关，80001-89999*/
-    USER_INFO_NAME_EXISTS(70001, "用户名称已存在"),
-    USER_INFO_PHONE_EXISTS(70002, "手机号码已存在"),
-    USER_INFO_ID_IS_NULL(70003, "用户资料的ID为空"),
-    USER_INFO_IS_NULL(70004, "查询结果集为空");
+    USER_INFO_NAME_EXISTS(80001, "用户名称已存在"),
+    USER_INFO_PHONE_EXISTS(80002, "手机号码已存在"),
+    USER_INFO_ID_IS_NULL(80003, "用户资料的ID为空"),
+    USER_INFO_IS_NULL(80004, "查询结果集为空"),
+    /*固件资料相关，90001-99999*/
+    FIRMWARE_NAME_EXISTS(90001, "固件名称已存在"),
+    FIRMWARE_ID_IS_NULL(90002, "固件的ID为空"),
+    FIRMWARE_IS_NULL(90003, "查询结果集为空"),
+    FIRMWARE_NOT_EXISTS(90004, "固件不存在"),
+    FIRMWARE_HAS_TASK(90005, "要删除的固件存在升级任务，不能删除"),
+    FIRMWARE_IS_UP(90006, "要删除的任务已被设备升级，不能删除");
 
     private Integer code;
 

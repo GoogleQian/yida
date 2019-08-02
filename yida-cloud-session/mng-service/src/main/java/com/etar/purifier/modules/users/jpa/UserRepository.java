@@ -76,4 +76,11 @@ public interface UserRepository extends JpaRepository<User, Integer> {
      */
     long countByRegTimeBetween(Date startTime, Date endTime);
 
+    /**
+     * 通过用户id查询
+     *
+     * @param userIds 用户id集合
+     * @return 结果
+     */
+    List<User> findByIdIn(List<Integer> userIds);
 }

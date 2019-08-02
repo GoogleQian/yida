@@ -218,4 +218,12 @@ public interface DeviceRepository extends JpaRepository<Device, Integer> {
      */
     @Query(value = "SELECT count(dev_code) FROM wx_user u LEFT JOIN device d ON  u.id=d.user_id  WHERE phone =?1", nativeQuery = true)
     Integer countDevMsgByPhone(String phone);
+
+    /**
+     * 通过版本号统计的设备数
+     *
+     * @param verNum 设备版本号
+     * @return 设备数
+     */
+    Integer countByVersionNum(int verNum);
 }

@@ -1,15 +1,14 @@
 package com.etar.mqtt.service.impl;
 
-import com.alibaba.fastjson.JSONObject;
 import com.etar.config.ApplicationContextUtils;
-import com.etar.dev.IDevMngService;
 import com.etar.mqtt.MqttPushClient;
 import com.etar.mqtt.service.IMessageArrivedService;
 import com.etar.utils.MqttUtil;
 import entity.adverstising.Advertising;
 import entity.advstatic.AdvStatic;
 import entity.dev.Device;
-import entity.emqclient.EmqClient;
+import entity.firmware.Firmware;
+import entity.firmwarestatic.FirmwareStatic;
 import org.apache.commons.lang3.StringUtils;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
@@ -31,19 +30,19 @@ public class MessageArrivedServiceImpl implements IMessageArrivedService {
     @Override
     public void startParseMessage(String topic, MqttMessage message) {
         // subscribe后得到的消息会执行到这里面
-        System.out.println("接收消息主题:" + topic);
+        log.info("接收消息主题:" + topic);
         String[] infos = topic.split("/");
 
-        System.out.println("接收消息Qos:" + message.getQos());
+        log.info("接收消息Qos:" + message.getQos());
         String ret = new String(message.getPayload());
-        System.out.println("接收消息内容:" + ret);
+        log.info("接收消息内容:" + ret);
         if (topic.contains(ConstantUtil.MQTT_RET_TOPIC)) {
             ret = StringUtils.trim(ret);
             //硬件响应指令操作
             hardwareResponseCommand(infos[1], ret);
         } else if (topic.contains(ConstantUtil.MQTT_HARDWARE_ADVRET)) {
-            System.out.println("群发广告应答");
-            adResponse(ret);
+            System.out.println("群发应答");
+            broadcastResponse(ret);
         }
     }
 
@@ -164,22 +163,35 @@ public class MessageArrivedServiceImpl implements IMessageArrivedService {
     }
 
     @Override
-    public void adResponse(String message) {
+    public void broadcastResponse(String message) {
         try {
             String[] advRets = message.split(",");
-            if ("1".equals(advRets[0].trim())) {
-
-                int bytesToInt = MqttUtil.bytesToInt(advRets[2].getBytes(), 0);
-                System.out.println("广告id:" + bytesToInt);
+            final String tag = advRets[0].trim();
+            final String devCode = advRets[1].trim();
+            int bytesToInt = Integer.valueOf(advRets[2].trim());//MqttUtil.bytesToInt(advRets[2].getBytes(), 0);
+            if (ConstantUtil.ADV_RESPONSE.equals(tag)) {
+                log.info("广告id:" + bytesToInt);
                 Advertising advertising = ApplicationContextUtils.getIDevMngService().findById(bytesToInt);
                 if (advertising != null) {
                     AdvStatic advStatic = new AdvStatic();
-                    advStatic.setDevId(advRets[1].trim());
+                    advStatic.setDevId(devCode);
                     advStatic.setAdvName(advertising.getName());
                     advStatic.setAdvId(bytesToInt);
                     advStatic.setReportTime(new Date());
 
                     ApplicationContextUtils.getIDevMngService().save(advStatic);
+                }
+            } else if (ConstantUtil.FIRMWARE_RESPONSE.equals(tag)) {
+                log.info("固件id:" + bytesToInt);
+                Firmware firmware = ApplicationContextUtils.getFirmwareService().findById(bytesToInt);
+                if (firmware != null) {
+                    FirmwareStatic firmwareStatic = new FirmwareStatic();
+                    firmwareStatic.setDevCode(devCode);
+                    firmwareStatic.setFmName(firmware.getName());
+                    firmwareStatic.setFmId(bytesToInt);
+                    firmwareStatic.setUpStatus(1);
+                    firmwareStatic.setReportTime(new Date());
+                    ApplicationContextUtils.getFirmwareStaticService().saveOnRespone(firmwareStatic);
                 }
             }
         } catch (Exception e) {

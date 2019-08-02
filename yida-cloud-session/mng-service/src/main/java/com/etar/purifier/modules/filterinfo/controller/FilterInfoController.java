@@ -143,11 +143,12 @@ public class FilterInfoController {
 	@GetMapping
 	public Result findByPage(@RequestParam(value = "page", required = false, defaultValue = "1") Integer page,
 	                         @RequestParam(value = "pageSize", required = false, defaultValue = "10") Integer pageSize,
-	                         @RequestParam(value = "filterCode", required = false) String filterCode) {
+	                         @RequestParam(value = "filterCode", required = false) String filterCode,
+	                         @RequestParam(value = "status", required = false) Integer status) {
 
 		DataResult result = new DataResult();
 		try {
-			Page<FilterInfo> all = filterInfoService.findPage(page - 1, pageSize, filterCode);
+			Page<FilterInfo> all = filterInfoService.findPage(page - 1, pageSize, filterCode,status);
 			PageBean<FilterInfo> pageBean = new PageBean<>();
 			if (all == null) {
 				pageBean.setList(new ArrayList<>());
@@ -197,7 +198,14 @@ public class FilterInfoController {
 	@LogOperate(description = "批量导出滤芯")
 	public Result export(@Valid @RequestBody BatchLongReqVo batchReqVo) {
 		try {
-			filterInfoService.batchExport(batchReqVo.getIds());
+			List<Long> ids = batchReqVo.getIds();
+			filterInfoService.batchExport(ids);
+			List<FilterInfo> byIdIn = filterInfoService.findByIdIn(ids);
+			for (FilterInfo filterInfo : byIdIn) {
+				//set导出时间
+				filterInfo.setExportTime(new Date());
+			}
+			asyncTask.saveFilteInfo(byIdIn);
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			return new Result().error(ResultCode.EXCEL_EXPORT_FAIL);

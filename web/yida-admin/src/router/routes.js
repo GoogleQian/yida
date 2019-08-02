@@ -8,19 +8,19 @@ const loginRoutes = [
 ];
 
 // 在左侧菜单中
-//设备总览路由
+//数据统计路由
 const totalRoutes = [
   {
     path: "/total",
     component: Layout,
     redirect: "/total/admin",
-    meta: { name: "设备总览", path: "/total", icon: "icon-yingyong" },
+    meta: { name: "数据统计", path: "/total", icon: "iconxitongzonglan" },
     childInLeft: false,
     children: [
       {
         path: "admin",
         component: () => import("@/views/deviceAll/deviceAll"),
-        meta: { name: "设备总览", path: "/total", icon: "icon-yingyong" }
+        meta: { name: "数据统计", path: "/total", icon: "iconxitongzonglan" }
       }
     ]
   }
@@ -32,35 +32,58 @@ const devRoutes = [
     path: "/dev",
     component: Layout,
     redirect: "/dev/admin",
-    meta: { name: "设备管理", path: "/dev", icon: "icon-shebei" },
-    childInLeft: false,
+    meta: { name: "设备管理", path: "/dev", icon: "iconshebeiguanli" },
+    childInLeft: true,
     children: [
       {
         path: "admin",
         component: () => import("@/views/dev-admin/dev-admin"),
-        meta: { name: "设备管理", path: "/dev", icon: "icon-shebei" }
-      }
+        meta: { name: "净水器", path: "/dev/admin", icon: "iconjingshuiqi" }
+      },
+      {
+        path: "filter",
+        component: () => import("@/views/filter-admin/filter-admin"),
+        meta: { name: "滤芯", path: "/dev/filter", icon: "iconlvxin" }
+      },
+      // {
+      //   path: "firmware",
+      //   component: () => import("@/views/firmware/firmware"),
+      //   meta: {
+      //     name: "固件管理",
+      //     path: "/dev/firmware",
+      //     icon: "icongujianguanli"
+      //   }
+      // },
+      // {
+      //   path: "level",
+      //   component: () => import("@/views/level/level"),
+      //   meta: {
+      //     name: "升级任务",
+      //     path: "/dev/level",
+      //     icon: "iconshengji2"
+      //   }
+      // }
     ]
   }
 ];
 
 // 滤芯管理路由
-const filterRoutes = [
-  {
-    path: "/filter",
-    component: Layout,
-    redirect: "/filter/admin",
-    meta: { name: "滤芯管理", path: "/filter", icon: "icon-kongqilvqingqi" },
-    childInLeft: false,
-    children: [
-      {
-        path: "admin",
-        component: () => import("@/views/filter-admin/filter-admin"),
-        meta: { name: "滤芯管理", path: "/filter", icon: "icon-kongqilvqingqi" }
-      }
-    ]
-  }
-];
+// const filterRoutes = [
+//   {
+//     path: "/filter",
+//     component: Layout,
+//     redirect: "/filter/admin",
+//     meta: { name: "滤芯管理", path: "/filter", icon: "icon-kongqilvqingqi" },
+//     childInLeft: false,
+//     children: [
+//       {
+//         path: "admin",
+//         component: () => import("@/views/filter-admin/filter-admin"),
+//         meta: { name: "滤芯管理", path: "/filter", icon: "icon-kongqilvqingqi" }
+//       }
+//     ]
+//   }
+// ];
 
 // 客户端上下线记录
 const clientRoutes = [
@@ -94,7 +117,7 @@ const userRoutes = [
     path: "/user",
     component: Layout,
     redirect: "/user/mp",
-    meta: { name: "用户管理", path: "/user", icon: "icon-yonghu1" },
+    meta: { name: "用户管理", path: "/user", icon: "iconyonghuguanli" },
     childInLeft: true,
     children: [
       {
@@ -103,7 +126,7 @@ const userRoutes = [
         meta: {
           name: "微信小程序",
           path: "/user/mp",
-          icon: "icon-yingyong"
+          icon: "iconweixinxiaochengxu"
         }
       },
       {
@@ -112,7 +135,7 @@ const userRoutes = [
         meta: {
           name: "用户信息",
           path: "/user/info",
-          icon: "icon-yingyong"
+          icon: "iconyonghuxinxi"
         }
       }
     ]
@@ -125,7 +148,7 @@ const serveRoutes = [
     path: "/serve",
     component: Layout,
     redirect: "/serve/banner",
-    meta: { name: "增值服务管理", path: "/serve", icon: "icon-danganguanli" },
+    meta: { name: "增值服务管理", path: "/serve", icon: "iconzengzhifuwu" },
     childInLeft: true,
     children: [
       {
@@ -134,7 +157,7 @@ const serveRoutes = [
         meta: {
           name: "小程序banner",
           path: "/serve/banner",
-          icon: "icon-yingyong"
+          icon: "iconbanner"
         }
       },
       {
@@ -143,7 +166,7 @@ const serveRoutes = [
         meta: {
           name: "小程序滤芯购买",
           path: "/serve/goods",
-          icon: "icon-yingyong"
+          icon: "icongoumai"
         }
       },
       {
@@ -152,7 +175,7 @@ const serveRoutes = [
         meta: {
           name: "设备待机广告",
           path: "/serve/ad",
-          icon: "icon-yingyong"
+          icon: "iconguanggao"
         }
       },
       {
@@ -161,19 +184,37 @@ const serveRoutes = [
         meta: {
           name: "广告应答",
           path: "/log/ad-reply",
-          icon: "icon-yingyong"
+          icon: "iconyingda"
         }
       }
     ]
   }
 ];
+
+// 固件升级
+// const firemwareRoutes = [
+//   {
+//     path: "/firmware",
+//     component: Layout,
+//     redirect: "/firmware/firmware",
+//     meta: { name: "固件升级", path: "/firmware", icon: "icon-gujianshengji" },
+//     childInLeft: false,
+//     children: [
+//       {
+//         path: "firmware",
+//         component: () => import("@/views/firmware/firmware"),
+//         meta: { name: "固件升级", path: "/firmware", icon: "icon-gujianshengji" }
+//       }
+//     ]
+//   }
+// ];
 // 日志管理
 const logRoutes = [
   {
     path: "/log",
     component: Layout,
     redirect: "/log/loginLog",
-    meta: { name: "日志管理", path: "/log", icon: "icon-danganguanli" },
+    meta: { name: "日志管理", path: "/log", icon: "iconrizhiguanli" },
     childInLeft: true,
     children: [
       {
@@ -182,7 +223,7 @@ const logRoutes = [
         meta: {
           name: "登录日志",
           path: "/log/loginLog",
-          icon: "icon-yingyong"
+          icon: "icondenglu-copy"
         }
       },
       {
@@ -191,7 +232,7 @@ const logRoutes = [
         meta: {
           name: "操作日志",
           path: "/log/operateLog",
-          icon: "icon-yingyong"
+          icon: "iconcaozuorizhi"
         }
       },
       {
@@ -200,7 +241,7 @@ const logRoutes = [
         meta: {
           name: "异常日志",
           path: "/log/errorLog",
-          icon: "icon-yingyong"
+          icon: "iconunusual"
         }
       }
     ]
@@ -208,34 +249,34 @@ const logRoutes = [
 ];
 // 设置
 export const setRoutes = [
-  {
-    path: "/system",
-    component: Layout,
-    redirect: "/system/account",
-    meta: { name: "设置", path: "/system", icon: "icon-danganguanli" },
-    childInLeft: true,
-    children: [
-      {
-        path: "account",
-        component: () => import("@/views/system/account/account"),
-        meta: {
-          name: "账号设置",
-          path: "/system/account",
-          icon: "icon-yingyong"
-        }
-      },
-      {
-        path: "role",
-        component: () => import("@/views/system/role/role"),
-        meta: {
-          name: "角色设置",
-          path: "/system/role",
-          icon: "icon-yingyong"
-        }
-      }
-    ]
-  }
-];
+         {
+           path: "/system",
+           component: Layout,
+           redirect: "/system/account",
+           meta: { name: "设置", path: "/system", icon: "iconziyuan" },
+           childInLeft: true,
+           children: [
+             {
+               path: "account",
+               component: () => import("@/views/system/account/account"),
+               meta: {
+                 name: "账号管理",
+                 path: "/system/account",
+                 icon: "iconzhanghaoguanli"
+               }
+             },
+             {
+               path: "role",
+               component: () => import("@/views/system/role/role"),
+               meta: {
+                 name: "角色管理",
+                 path: "/system/role",
+                 icon: "icontubiaozhizuomoban-copy"
+               }
+             }
+           ]
+         }
+       ];
 
 // 不在左侧菜单中
 const otherRoutes = [
@@ -274,6 +315,17 @@ const otherRoutes = [
         meta: { name: "广告修改" }
       }
     ]
+  },
+  {
+    path: "/dev",
+    component: Layout,
+    children: [
+      {
+        path: "level/desc",
+        component: () => import("@/views/level/desc/desc"),
+        meta: { name: "升级详情" }
+      }
+    ]
   }
 ];
 
@@ -281,7 +333,6 @@ export const appRoutes = [
   ...totalRoutes,
   ...userRoutes,
   ...devRoutes,
-  ...filterRoutes,
   ...serveRoutes,
   ...logRoutes
 ];

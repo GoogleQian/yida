@@ -5,7 +5,6 @@ import com.etar.purifier.common.annotation.LogOperate;
 import com.etar.purifier.common.validation.XException;
 import com.etar.purifier.modules.advertising.service.AdvertisingService;
 import com.etar.purifier.modules.mqtt.MqttService;
-import com.etar.purifier.utils.AdUtil;
 import com.etar.purifier.utils.MqttUtil;
 import entity.adverstising.AdvertVo;
 import entity.adverstising.Advertising;
@@ -13,8 +12,6 @@ import entity.common.entity.BatchReqVo;
 import entity.common.entity.DataResult;
 import entity.common.entity.PageBean;
 import entity.common.entity.Result;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.poi.ss.formula.functions.T;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.slf4j.Logger;
@@ -28,10 +25,8 @@ import utils.ConstantUtil;
 import utils.ResultCode;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 /**
  * 待机广告 AdvertisingController层
@@ -235,7 +230,7 @@ public class AdvertisingController {
     /**
      * 下发广告到指定设备
      */
-    @PostMapping(value = "/send/dev")
+//    @PostMapping(value = "/send/dev")
     public Result sendAdToTheDev(@Valid @RequestBody AdvertVo advertVo) {
         Result result = new Result();
         Date time = new Date();

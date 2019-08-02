@@ -22,6 +22,8 @@ import javax.persistence.criteria.Predicate;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * User服务类
@@ -209,6 +211,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Set<Integer> findUserIdsByNickName(String nickName) {
+        List<User> byNickNameLike = userRepository.findByNickNameLike("%" + nickName + "%");
+        if (!CollectionUtils.isEmpty(byNickNameLike)) {
+            return byNickNameLike.stream().map(User::getId).collect(Collectors.toSet());
+        } else {
+            return null;
+        }
+    }
+
+    @Override
     public void delUserAndUnboundDev(Integer userId) {
         List<Device> devices = deviceService.findByUserId(userId);
         if (!CollectionUtils.isEmpty(devices)) {
@@ -234,6 +246,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public long countTodayRegisterUser(Date startTime, Date endTime) {
         return userRepository.countByRegTimeBetween(startTime, endTime);
+    }
+
+    @Override
+    public List<User> findByIdIn(List<Integer> userIds) {
+        return userRepository.findByIdIn(userIds);
     }
 }
 

@@ -80,8 +80,14 @@ public interface FilterInfoService extends IBaseService<FilterInfo, Long> {
      * @param filterCode 滤芯编码
      * @return 查询结果
      */
-    Page<FilterInfo> findPage(Integer page, Integer pageSize, String filterCode);
+    Page<FilterInfo> findPage(Integer page, Integer pageSize, String filterCode,Integer status);
 
+    /**
+     * 按ID集合查询
+     * @param ids ids
+     * @return  List
+     */
+     List<FilterInfo> findByIdIn(List<Long> ids);
 
 }
 

@@ -36,23 +36,17 @@ img:
  #环境地址
  imgUrl: http://iotsvr.he-live.com
 
-mqtt:
- host: tcp://39.105.103.1:1883
- clientid: backend:${random.int[1024,65536]}
- username: admin
- password: password
- topic: topic
- timeout: 3000
- keepalive: 2000
+firmware:
+ #文件保存路径
+ uploadPath:  /var/firmware/
+ #返回给前端的访问路径
+ visitPath: /firmware/
+ #重命名图片前缀
+ prefix: firmware-
+ #环境地址
+ firmwareUrl: http://iotsvr.he-live.com
 
-#EMQ Basic 认证
-appid: 21c40690fa4e5
-appsecret: Mjg1NjE0MzE1MTM3NTY0Mzc1MjI3MTg2NDA1MTc1NDU5ODE
-#EMQ服务器地址
-emq_server: http://39.105.103.1:8080
-#接口地址
-connect_url: /api/v3/connections/
-route_url: /api/v3/routes/
+
 server:
  port: 8787
 

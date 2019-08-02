@@ -3,6 +3,7 @@ package com.etar.purifier.modules.dev.service.impl;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.etar.purifier.modules.advertising.service.AdvertisingService;
+import com.etar.purifier.utils.DevCodeUtil;
 import entity.common.entity.PageBean;
 import entity.dev.DevVo;
 import com.etar.purifier.modules.dev.jpa.DeviceRepository;
@@ -14,6 +15,7 @@ import com.etar.purifier.utils.MqttUtil;
 import entity.adverstising.Advertising;
 import entity.common.entity.Result;
 import entity.dev.Device;
+import entity.firmwarestatic.FirmwareStatic;
 import entity.user.User;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -56,6 +58,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -216,9 +219,9 @@ public class DeviceServiceImpl implements DeviceService {
 
 
     @Override
-    public Page<Device> findPage(int page, int pageSize, String devCode, Integer online, Integer userId,String bindAccount) {
+    public Page<Device> findPage(int page, int pageSize, String devCode, Integer online, Integer userId, String bindAccount) {
         boolean bindAountFlag = StringUtils.isNoneBlank(bindAccount);
-        Pageable pageable = PageRequest.of(page, pageSize, Sort.Direction.DESC, bindAountFlag?"userId":"id");
+        Pageable pageable = PageRequest.of(page, pageSize, Sort.Direction.DESC, bindAountFlag ? "userId" : "id");
         Specification specification = (Specification) (root, query, cb) -> {
             Predicate predicate = cb.conjunction();
             if (StringUtils.isNotBlank(devCode)) {
@@ -234,7 +237,7 @@ public class DeviceServiceImpl implements DeviceService {
                 predicate.getExpressions().add(cb.equal(root.get("status").as(Integer.class), 1));
             }
             //绑定账号
-            if(bindAountFlag){
+            if (bindAountFlag) {
                 CriteriaBuilder.In<Object> in = cb.in(root.get("userId").as(String.class));
                 Set<Integer> userIdsByNickName = userService.findUserIdsByNickName(bindAccount);
                 for (Integer integer : userIdsByNickName) {
@@ -266,16 +269,29 @@ public class DeviceServiceImpl implements DeviceService {
 
     @Override
     public void getDevBindAccount(List<Device> deviceList) {
-        for (Device device : deviceList) {
-            Integer userId = device.getUserId();
-            if (userId != null) {
-                User user = userService.findById(userId);
-                if (user != null) {
-                    device.setBindAccount(user.getNickName());
-                }
+        List<Integer> userIds = DevCodeUtil.getUserIds(deviceList);
+        List<User> list = userService.findByIdIn(userIds);
+        Map<Integer, User> map = list.stream()
+                .collect(Collectors.toMap(User::getId, user -> user));
+        // 合并
+        deviceList.forEach(n -> {
+            // 如果devCode一致
+            if (map.containsKey(n.getUserId())) {
+                User fs = map.get(n.getUserId());
+                // 把昵称复制过去
+                n.setBindAccount(fs.getNickName());
             }
+        });
 
-        }
+//        for (Device device : deviceList) {
+//            Integer userId = device.getUserId();
+//            if (userId != null) {
+//                User user = userService.findById(userId);
+//                if (user != null) {
+//                    device.setBindAccount(user.getNickName());
+//                }
+//            }
+//        }
     }
 
 
@@ -627,7 +643,7 @@ public class DeviceServiceImpl implements DeviceService {
      * 查询结果解析到dev实体类
      *
      * @param searchObjectList 查询得到结果集
-     * @param devVoList          想要的结果集
+     * @param devVoList        想要的结果集
      */
     private void searchResultParseToDev(List<Object> searchObjectList, List<DevVo> devVoList) {
         if (!CollectionUtils.isEmpty(searchObjectList)) {
@@ -640,6 +656,11 @@ public class DeviceServiceImpl implements DeviceService {
                 devVoList.add(devVo);
             }
         }
+    }
+
+    @Override
+    public Integer countByVersionNum(int verNum) {
+        return deviceRepository.countByVersionNum(verNum);
     }
 }
 

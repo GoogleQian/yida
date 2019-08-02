@@ -129,7 +129,7 @@ public class FilterInfoServiceImpl implements FilterInfoService {
     }
 
     @Override
-    public Page<FilterInfo> findPage(Integer page, Integer pageSize, String filterCode) {
+    public Page<FilterInfo> findPage(Integer page, Integer pageSize, String filterCode,Integer status) {
         Pageable pageable = PageRequest.of(page, pageSize, Sort.Direction.DESC, "id");
         Specification specification = new Specification() {
             @Override
@@ -137,6 +137,9 @@ public class FilterInfoServiceImpl implements FilterInfoService {
                 Predicate predicate = cb.conjunction();
                 if (StringUtils.isNotBlank(filterCode)) {
                     predicate.getExpressions().add(cb.like(root.get("filterCode").as(String.class), "%" + filterCode + "%"));
+                }
+                if (status!=null) {
+                    predicate.getExpressions().add(cb.equal(root.get("status").as(Integer.class), status));
                 }
                 return predicate;
             }
@@ -170,8 +173,8 @@ public class FilterInfoServiceImpl implements FilterInfoService {
         Sort sort = new Sort(Sort.Direction.DESC, "id");
         return filterInfoRepository.findAll(sort);
     }
-
-    private List<FilterInfo> findByIdIn(List<Long> ids) {
+    @Override
+    public List<FilterInfo> findByIdIn(List<Long> ids) {
         return filterInfoRepository.findByIdInOrderByIdDesc(ids);
     }
 
